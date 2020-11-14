@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<!-- staticfiles  -->
+    {% block extrastatic %}
+    {% endblock %}
+
+    {% block style_css %}
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/googlemaps.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/mascota_list.css" %}">   
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <title>{% block title %}Document {% endblock %}</title>
+    {# Cargamos la librería #}
+   {% load bootstrap4 %}
+ 
+   {# CSS Bootstrap #}
+   {% bootstrap_css %}
+</head>
+<body>
+<div class="container">
+
+    {% block navbar %}
+    {% include 'base/header.html' %}
+    {% endblock %}
+
+
+    {% block content %}
+    <h4>    Bloque de contenido     </h4>
+    {% endblock %}
+
+
+    {% block footer %}
+    {% endblock%}
+</div>
+{# JS y jQuery Bootstrap #}
+{% bootstrap_javascript jquery='full' %}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZktO_JnnvrY4BnD2IyZo8PqNXiDTWP1w&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script> -->
+<!-- <script src="https://maps.google.com/maps/api/js?sensor=true"></script> -->
+<script src="{% static "js/googlemaps.js" %}"></script>
+    {% block extrajs %}
+    {% endblock %}
+
+
+</body>
+</html>

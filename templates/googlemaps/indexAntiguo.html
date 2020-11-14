@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+
+
+{% block title %}
+Aplicación en Django y GMaps
+{% endblock %}
+
+{% block header %}
+<h1>Este es el bloque del header</h1>
+{% endblock %}
+{% block content %}
+
+<div class="contenedor">
+    <div id="mapa" class="capas">
+
+    </div>
+    <div id="datos" class="capas">
+
+    </div>
+</div>
+{% endblock %}
+
+<head>
+    {{form.media}}
+</head>
+{{form.as_p}}
